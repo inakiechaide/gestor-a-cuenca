@@ -1,0 +1,446 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Cristian Cuenca Gestoría</title>
+<meta name="description" content="Gestoría automotor: transferencias (formulario 08), reducción de multas, retiro de vehículos secuestrados y trámites en general. Consultas por WhatsApp.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: sobrio y aireado. Azul marino, filetes dorados finos y una serif de alto contraste; nada de cajas pesadas, mucho blanco. */
+:root{
+  --bg:#f4f5f7; --surface:#ffffff; --ink:#0e1726; --muted:#586275; --line:#dde2ea;
+  --navy:#0a1f3c; --navy-2:#102c54; --navy-ink:#ffffff; --navy-muted:#b4c0d4; --navy-line:rgba(255,255,255,.14);
+  --gold:#9a7630; --gold-on-navy:#cdac66;
+  --card:#ffffff; --card-ink:#0e1726; --card-muted:#586275; --card-line:#e3e7ee;
+  --wa:#c9a961; --wa-hover:#d9bd7e; --wa-ink:#0a1f3c;
+  --shadow:0 1px 2px rgba(10,31,60,.06),0 12px 32px -16px rgba(10,31,60,.28);
+  --display:"Cormorant Garamond","Iowan Old Style",Georgia,"Times New Roman",serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#070c15; --surface:#0f1725; --ink:#eaeef5; --muted:#97a2b6; --line:#1f2a3d;
+  --navy:#0a1730; --navy-2:#0f2244; --navy-muted:#a7b4ca;
+  --gold:#cdac66; --card:#111b2c; --card-ink:#eaeef5; --card-muted:#97a2b6; --card-line:#23304a;
+  --wa:#c9a961; --wa-hover:#d9bd7e; --wa-ink:#0a1730;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 14px 34px -18px rgba(0,0,0,.8); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#070c15; --surface:#0f1725; --ink:#eaeef5; --muted:#97a2b6; --line:#1f2a3d;
+  --navy:#0a1730; --navy-2:#0f2244; --navy-muted:#a7b4ca;
+  --gold:#cdac66; --card:#111b2c; --card-ink:#eaeef5; --card-muted:#97a2b6; --card-line:#23304a;
+  --wa:#c9a961; --wa-hover:#d9bd7e; --wa-ink:#0a1730;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 14px 34px -18px rgba(0,0,0,.8); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;margin:0;padding-bottom:82px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:22px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1,h2{font-family:var(--display);font-weight:500;line-height:1.06;letter-spacing:-.005em}
+h1{font-size:clamp(2.7rem,11vw,4.6rem)}
+h1 em{font-style:italic;color:var(--gold-on-navy)}
+h2{font-size:clamp(2.1rem,7.4vw,3rem)}
+h3{font-family:var(--body);font-weight:600;font-size:1.04rem;line-height:1.3}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+.kicker{display:flex;align-items:center;gap:12px;font-weight:700;text-transform:uppercase;letter-spacing:.26em;font-size:.66rem;color:var(--gold)}
+.kicker::before{content:"";width:36px;height:1px;background:currentColor}
+[id]{scroll-margin-top:84px}
+
+/* utility strip */
+.util{background:var(--navy);color:var(--navy-muted);font-size:.8rem;border-bottom:1px solid var(--navy-line)}
+.util .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 20px;padding-block:8px}
+.util span{white-space:nowrap}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--navy);color:var(--navy-ink);border-bottom:1px solid var(--navy-line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;min-width:0}
+.seal{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid var(--gold-on-navy);box-shadow:inset 0 0 0 3px var(--navy),inset 0 0 0 4px rgba(205,172,102,.45);display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:1.12rem;color:var(--gold-on-navy);letter-spacing:.04em}
+.brand strong{display:block;font-family:var(--display);font-weight:600;font-size:1.32rem;line-height:1.1;letter-spacing:.01em}
+.brand small{display:block;font-size:.6rem;font-weight:500;letter-spacing:.28em;margin-top:3px;text-transform:uppercase;color:var(--navy-muted)}
+.nav{display:none}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:2px;font-family:var(--body);font-weight:600;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;transition:background-color .15s ease,border-color .15s ease}
+.btn-wa{background:var(--wa);color:var(--wa-ink)}
+.btn-wa:hover{background:var(--wa-hover)}
+.btn-line{background:transparent;color:var(--navy-ink);border:1px solid rgba(255,255,255,.38)}
+.btn-line:hover{border-color:var(--gold-on-navy)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* hero */
+.hero{position:relative;background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:var(--navy-ink);overflow:hidden}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero-grid{position:relative;display:grid;gap:44px;padding-block:60px 64px}
+.hero-copy{display:grid;gap:24px;min-width:0;align-content:center}
+.hero .kicker{color:var(--gold-on-navy)}
+.lead{font-size:1.05rem;color:var(--navy-muted);max-width:32em}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.cta-row .btn{flex:1 1 220px}
+
+.quick{background:var(--card);color:var(--card-ink);border-radius:2px;border-top:1px solid var(--gold-on-navy);box-shadow:0 30px 60px -30px rgba(0,0,0,.65);min-width:0}
+.quick header{padding:26px 26px 18px}
+.quick header p{font-size:.62rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--card-muted)}
+.quick header h2{font-size:1.75rem;margin-top:6px}
+.quick a{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 26px;border-top:1px solid var(--card-line);text-decoration:none;min-height:64px;transition:background-color .15s ease}
+.quick a:hover{background:rgba(154,118,48,.07)}
+.quick a b{display:block;font-weight:500;font-size:.98rem;line-height:1.3}
+.quick a small{display:block;font-size:.82rem;color:var(--card-muted);line-height:1.35}
+.quick a svg{width:18px;height:18px;flex:none;color:var(--gold)}
+
+/* assurances */
+.assure{background:var(--surface);border-bottom:1px solid var(--line)}
+.assure ul{list-style:none;margin:0;padding:0;display:grid}
+.assure li{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:24px 0;border-bottom:1px solid var(--line)}
+.assure li:last-child{border-bottom:0}
+.assure svg{width:26px;height:26px;color:var(--gold);margin-top:2px}
+.assure b{display:block;font-weight:600;font-size:.96rem}
+.assure span span{color:var(--muted);font-size:.93rem}
+
+section{padding-block:76px}
+.head{display:grid;gap:16px;margin-bottom:40px}
+.head>p:not(.kicker){color:var(--muted);max-width:38em}
+
+/* services */
+.services{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.svc{background:var(--surface);padding:36px 26px;display:grid;gap:18px;min-width:0;align-content:start}
+.svc-head{display:flex;align-items:center;gap:16px}
+.svc-head h3{font-family:var(--display);font-weight:600;font-size:1.7rem;line-height:1.1}
+.ico{width:50px;height:50px;flex:none;border:1px solid var(--gold);border-radius:50%;color:var(--gold);display:grid;place-items:center}
+.ico svg{width:22px;height:22px}
+.svc-head small{display:block;font-size:.6rem;font-weight:600;letter-spacing:.24em;margin-bottom:4px;text-transform:uppercase;color:var(--muted)}
+.svc>p{color:var(--muted);font-size:.97rem}
+.svc ul{list-style:none;margin:0;padding:20px 0 0;border-top:1px solid var(--line);font-size:.94rem;display:grid;gap:8px}
+.svc li,.more li,.docs li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start}
+.svc li svg,.more svg,.docs svg{width:15px;height:15px;margin-top:5px;color:var(--gold)}
+.svc>a{font-weight:600;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--ink);border-bottom:0}
+.svc>a span{border-bottom:1px solid var(--gold);padding-bottom:4px}
+.svc>a svg{width:16px;height:16px;color:var(--gold)}
+
+.more-wrap{margin-top:52px}
+.more-wrap h3{font-family:var(--display);font-weight:500;font-size:1.6rem;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.more{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px 24px;font-size:.95rem}
+
+/* process */
+.dark{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:var(--navy-ink)}
+.dark .kicker{color:var(--gold-on-navy)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;display:grid;grid-template-columns:auto 1fr;gap:20px;padding-bottom:34px}
+.steps h3{font-family:var(--display);font-weight:600;font-size:1.5rem;line-height:1.15}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:counter(s);width:42px;height:42px;border-radius:50%;border:1px solid var(--gold-on-navy);color:var(--gold-on-navy);display:grid;place-items:center;font-family:var(--display);font-style:italic;font-weight:500;font-size:1.3rem;background:var(--navy);position:relative;z-index:1}
+.steps li::after{content:"";position:absolute;left:21px;top:42px;bottom:0;width:1px;background:var(--navy-line)}
+.steps li:last-child::after{display:none}
+.steps p{color:var(--navy-muted);font-size:.96rem;margin-top:6px}
+
+/* docs + faq */
+.two{display:grid;gap:44px}
+.docs{list-style:none;margin:0;padding:0;display:grid;gap:12px;font-size:.97rem}
+.note{margin-top:26px;padding:4px 0 4px 18px;border-left:1px solid var(--gold);font-style:italic;color:var(--muted);font-size:.92rem}
+.faq{border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:22px 0;font-weight:500;font-size:1.02rem;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";width:8px;height:8px;flex:none;border-right:1px solid var(--gold);border-bottom:1px solid var(--gold);transform:rotate(45deg);margin-right:4px;transition:transform .15s ease}
+details[open] summary::after{transform:rotate(-135deg)}
+details p{color:var(--muted);padding-bottom:20px;max-width:44em;font-size:.97rem}
+
+/* contact */
+.contact{display:grid;gap:28px}
+.contact .head{margin:0}
+.contact .head>p:not(.kicker){color:var(--navy-muted)}
+.rows{display:grid;border-top:1px solid var(--navy-line)}
+.row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px;padding:22px 0;border-bottom:1px solid var(--navy-line)}
+.row div{min-width:0}
+.row small{display:block;color:var(--gold-on-navy);font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.26em}
+.row strong{font-family:var(--display);font-weight:500;font-size:1.5rem;line-height:1.3;overflow-wrap:anywhere;user-select:all}
+.copy{min-height:38px;padding:0 16px;border-radius:2px;border:1px solid rgba(255,255,255,.3);background:transparent;color:var(--navy-ink);font:600 .68rem var(--body);letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.copy:hover{border-color:var(--gold-on-navy)}
+
+footer{background:var(--navy);color:var(--navy-muted);font-size:.86rem;border-top:1px solid var(--navy-line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between;padding-block:30px}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));box-shadow:0 -8px 24px -16px rgba(10,31,60,.35)}
+.bar .btn{width:100%}
+
+@media (min-width:900px){
+  body{padding-bottom:0}
+  .bar{display:none}
+  .nav{display:flex;align-items:center;gap:34px;font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+  .nav a{text-decoration:none;color:var(--navy-muted)}
+  .nav a:hover{color:var(--navy-ink)}
+  .nav .btn{min-height:42px;padding:0 18px;font-size:.72rem;background:transparent;border:1px solid var(--gold-on-navy);color:var(--gold-on-navy)}
+  .nav .btn:hover{background:var(--wa);color:var(--wa-ink)}
+  .hero-grid{grid-template-columns:1.25fr .75fr;gap:80px;padding-block:112px 120px;align-items:center}
+  .cta-row .btn{flex:0 0 auto}
+  .assure ul{grid-template-columns:repeat(3,1fr)}
+  .assure li{padding:36px 32px 36px 0;border-bottom:0}
+  .assure li+li{padding-left:32px;border-left:1px solid var(--line)}
+  .services{grid-template-columns:1fr 1fr}
+  .svc{padding:48px 44px}
+  .steps{grid-template-columns:repeat(3,1fr);gap:40px}
+  .steps li{grid-template-columns:1fr;gap:22px;padding-bottom:0}
+  .steps li::after{left:42px;right:-40px;top:21px;bottom:auto;width:auto;height:1px}
+  .two{grid-template-columns:.8fr 1.2fr;gap:72px}
+  .contact{grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+  section{padding-block:120px}
+  .head{margin-bottom:56px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.svc,summary::after{transition:none}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 2a8 8 0 1 1-4.2 14.8l-.4-.2-2.6.7.7-2.5-.3-.4A8 8 0 0 1 12 4Z"/><path fill="currentColor" d="M9.1 7.6c-.3 0-.7.1-1 .5-.4.5-1 1.200-1 2.400s.9 2.500 1.100 2.800c.2.3 1.900 3 4.700 4 2.300.9 2.800.6 3.300.5.6-.1 1.600-.7 1.800-1.300.2-.6.2-1.100.1-1.300-.1-.2-.3-.3-.7-.5l-1.800-.9c-.3-.1-.6-.1-.8.2l-.7.9c-.2.2-.4.3-.7.1-1.300-.6-2.300-1.500-3.100-2.800-.2-.4 0-.5.2-.8l.5-.7c.1-.2.1-.5 0-.7L9.900 8c-.2-.4-.5-.4-.8-.4Z"/></symbol>
+  <symbol id="ok" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.500 4.500L19 7.500"/></symbol>
+  <symbol id="arr" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></g></symbol>
+  <symbol id="i-pct" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18L18 6"/><circle cx="7.500" cy="7.500" r="2.500"/><circle cx="16.500" cy="16.500" r="2.500"/></g></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l8-8M16 7l2.500 2.500M13.500 9.500l2 2"/></g></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M3 7V6a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-bill" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></g></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="1"/><path d="M9 4V2.500h6V4M8.500 10l1.500 1.500 2.500-2.500M8.500 16h7"/></g></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+</svg>
+
+<div class="util" id="inicio">
+  <div class="wrap"><span>Gestoría del automotor</span><span>WhatsApp +54 9 249 457-1212</span></div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">
+      <span class="seal" aria-hidden="true">CC</span>
+      <span><strong>Cristian Cuenca</strong><small>Gestoría automotor</small></span>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#documentacion">Documentación</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/5492494571212?text=Hola%20Cristian%2C%20quiero%20hacer%20una%20consulta."><svg aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <canvas id="guilloche" aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="kicker">Gestoría automotor</p>
+      <h1>Gestión <em>profesional</em> de los trámites de su vehículo.</h1>
+      <p class="lead">Transferencias, multas, vehículos secuestrados y todo trámite del automotor. Usted consulta, recibe los requisitos y el costo, y la gestión queda a mi cargo.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/5492494571212?text=Hola%20Cristian%2C%20quiero%20consultar%20por%20un%20tr%C3%A1mite."><svg aria-hidden="true"><use href="#wa"/></svg>Consultar por WhatsApp</a>
+        <a class="btn btn-line" href="#servicios">Ver servicios</a>
+      </div>
+    </div>
+    <aside class="quick" aria-label="Consulta rápida">
+      <header><p>Consulta rápida</p><h2>¿Qué trámite necesita?</h2></header>
+      <a target="_blank" rel="noopener" href="https://wa.me/5492494571212?text=Hola%20Cristian%2C%20quiero%20consultar%20por%20una%20transferencia%20(formulario%2008)."><span><b>Transferencia</b><small>Formulario 08, compra y venta</small></span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+      <a target="_blank" rel="noopener" href="https://wa.me/5492494571212?text=Hola%20Cristian%2C%20quiero%20consultar%20por%20reducci%C3%B3n%20de%20multas."><span><b>Multas</b><small>Reducción y regularización</small></span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+      <a target="_blank" rel="noopener" href="https://wa.me/5492494571212?text=Hola%20Cristian%2C%20necesito%20retirar%20un%20veh%C3%ADculo%20secuestrado."><span><b>Vehículo secuestrado</b><small>Liberación y retiro</small></span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+      <a target="_blank" rel="noopener" href="https://wa.me/5492494571212?text=Hola%20Cristian%2C%20quiero%20consultar%20por%20un%20tr%C3%A1mite."><span><b>Otro trámite</b><small>Informes, duplicados, altas y bajas</small></span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+    </aside>
+  </div>
+</div>
+
+<div class="assure">
+  <div class="wrap">
+    <ul>
+      <li><svg aria-hidden="true"><use href="#i-bill"/></svg><span><b>Presupuesto previo</b><span>Costo informado antes de iniciar el trámite.</span></span></li>
+      <li><svg aria-hidden="true"><use href="#i-list"/></svg><span><b>Requisitos claros</b><span>La documentación necesaria, detallada de una sola vez.</span></span></li>
+      <li><svg aria-hidden="true"><use href="#i-eye"/></svg><span><b>Seguimiento</b><span>Aviso de cada avance hasta la finalización.</span></span></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+  <section id="servicios">
+    <div class="wrap">
+      <div class="head">
+        <p class="kicker">Servicios</p>
+        <h2>Áreas de gestión</h2>
+        <p>Cada consulta abre WhatsApp con el mensaje ya redactado.</p>
+      </div>
+      <div class="services">
+        <article class="svc">
+          <div class="svc-head"><span class="ico"><svg aria-hidden="true"><use href="#i-doc"/></svg></span><div><small>Formulario 08</small><h3>Transferencias</h3></div></div>
+          <p>Compra y venta de autos, motos y utilitarios, con la documentación completa y en regla.</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#ok"/></svg>Armado y control del formulario 08</li>
+            <li><svg aria-hidden="true"><use href="#ok"/></svg>Verificación policial y libre deuda</li>
+            <li><svg aria-hidden="true"><use href="#ok"/></svg>Presentación en el Registro y retiro de título y cédula</li>
+          </ul>
+          <a target="_blank" rel="noopener" href="https://wa.me/5492494571212?text=Hola%20Cristian%2C%20quiero%20consultar%20por%20una%20transferencia%20(formulario%2008)."><span>Consultar transferencia</span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+        </article>
+        <article class="svc">
+          <div class="svc-head"><span class="ico"><svg aria-hidden="true"><use href="#i-pct"/></svg></span><div><small>Infracciones</small><h3>Reducción de multas</h3></div></div>
+          <p>Revisión de las infracciones registradas y gestión de la reducción o regularización que corresponda.</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#ok"/></svg>Consulta de infracciones por dominio o DNI</li>
+            <li><svg aria-hidden="true"><use href="#ok"/></svg>Gestión de reducción y planes de pago</li>
+            <li><svg aria-hidden="true"><use href="#ok"/></svg>Libre deuda de infracciones</li>
+          </ul>
+          <a target="_blank" rel="noopener" href="https://wa.me/5492494571212?text=Hola%20Cristian%2C%20quiero%20consultar%20por%20reducci%C3%B3n%20de%20multas."><span>Consultar por multas</span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+        </article>
+        <article class="svc">
+          <div class="svc-head"><span class="ico"><svg aria-hidden="true"><use href="#i-key"/></svg></span><div><small>Liberación</small><h3>Vehículos secuestrados</h3></div></div>
+          <p>Gestión para recuperar autos y motos retenidos, en el menor plazo posible.</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#ok"/></svg>Revisión de la causa del secuestro</li>
+            <li><svg aria-hidden="true"><use href="#ok"/></svg>Regularización de documentación y deuda</li>
+            <li><svg aria-hidden="true"><use href="#ok"/></svg>Trámite de liberación y retiro</li>
+          </ul>
+          <a target="_blank" rel="noopener" href="https://wa.me/5492494571212?text=Hola%20Cristian%2C%20necesito%20retirar%20un%20veh%C3%ADculo%20secuestrado."><span>Consultar por un secuestro</span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+        </article>
+        <article class="svc">
+          <div class="svc-head"><span class="ico"><svg aria-hidden="true"><use href="#i-folder"/></svg></span><div><small>Automotor y administrativos</small><h3>Trámites en general</h3></div></div>
+          <p>Otras gestiones del automotor y trámites administrativos. Si no figura en la lista, consulte igual.</p>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#ok"/></svg>Informes de dominio y de deuda</li>
+            <li><svg aria-hidden="true"><use href="#ok"/></svg>Duplicados de título, cédula y chapas</li>
+            <li><svg aria-hidden="true"><use href="#ok"/></svg>Altas, bajas y cambios de radicación</li>
+          </ul>
+          <a target="_blank" rel="noopener" href="https://wa.me/5492494571212?text=Hola%20Cristian%2C%20quiero%20consultar%20por%20un%20tr%C3%A1mite."><span>Consultar otro trámite</span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+        </article>
+      </div>
+
+      <div class="more-wrap">
+        <h3>Otras gestiones habituales</h3>
+        <ul class="more">
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Inscripción inicial 0 km</li>
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Denuncia de venta</li>
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Informe de dominio</li>
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Libre deuda de patentes</li>
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Cambio de radicación</li>
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Duplicado de título</li>
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Duplicado de cédula</li>
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Baja de vehículo</li>
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Verificación policial</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark" id="proceso">
+    <div class="wrap">
+      <div class="head">
+        <p class="kicker">Proceso</p>
+        <h2>Cómo se desarrolla la gestión</h2>
+      </div>
+      <ol class="steps">
+        <li><div><h3>Consulta</h3><p>Me escribe por WhatsApp con el trámite que necesita y el dominio del vehículo.</p></div></li>
+        <li><div><h3>Requisitos y presupuesto</h3><p>Le informo la documentación necesaria y el costo antes de comenzar.</p></div></li>
+        <li><div><h3>Gestión y entrega</h3><p>Presento el trámite, hago el seguimiento y le aviso cuando está finalizado.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="documentacion">
+    <div class="wrap two">
+      <div>
+        <div class="head">
+          <p class="kicker">Documentación</p>
+          <h2>Qué tener a mano</h2>
+          <p>Para una transferencia, en general se requiere:</p>
+        </div>
+        <ul class="docs">
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>DNI de comprador y vendedor</li>
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Título del vehículo</li>
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Cédula de identificación</li>
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Formulario 08 firmado</li>
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Verificación policial</li>
+          <li><svg aria-hidden="true"><use href="#ok"/></svg>Libre deuda de patentes e infracciones</li>
+        </ul>
+        <p class="note">Según el caso puede requerirse documentación adicional. La lista exacta se confirma al momento de la consulta.</p>
+      </div>
+      <div>
+        <div class="head">
+          <p class="kicker">Preguntas frecuentes</p>
+          <h2>Antes de consultar</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>¿Cuánto cuesta el trámite?</summary>
+            <p>Depende del tipo de trámite, del valor del vehículo y de los aranceles vigentes. Con el dominio y el tipo de gestión se envía un presupuesto detallado antes de comenzar.</p>
+          </details>
+          <details>
+            <summary>¿Cuánto demora?</summary>
+            <p>Cada trámite tiene sus plazos y dependen del organismo que interviene. Al revisar el caso se informa un plazo estimado y se comunica cada avance.</p>
+          </details>
+          <details>
+            <summary>Me secuestraron el vehículo, ¿cómo sigo?</summary>
+            <p>Envíe el acta o la constancia que le entregaron junto con el dominio. Con esa información se determina el motivo de la retención y qué debe regularizarse para pedir la liberación.</p>
+          </details>
+          <details>
+            <summary>¿Hay que presentarse personalmente?</summary>
+            <p>La mayor parte de la gestión queda a mi cargo. Si algún paso requiere su firma o su presencia, se avisa con anticipación.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark" id="contacto">
+    <div class="wrap contact">
+      <div class="head">
+        <p class="kicker">Contacto</p>
+        <h2>Consulte su trámite</h2>
+        <p>WhatsApp es la vía más rápida. También puede escribir por correo electrónico.</p>
+        <a class="btn btn-wa" style="margin-top:14px;justify-self:start" target="_blank" rel="noopener" href="https://wa.me/5492494571212?text=Hola%20Cristian%2C%20quiero%20hacer%20una%20consulta."><svg aria-hidden="true"><use href="#wa"/></svg>Escribir por WhatsApp</a>
+      </div>
+      <div class="rows">
+        <div class="row">
+          <div><small>WhatsApp</small><strong id="tel">+54 9 249 457-1212</strong></div>
+          <button class="copy" id="copy-tel" type="button" data-copy="+5492494571212">Copiar</button>
+        </div>
+        <div class="row">
+          <div><small>Correo electrónico</small><strong id="mail">cristiancuenca515@gmail.com</strong></div>
+          <button class="copy" id="copy-mail" type="button" data-copy="cristiancuenca515@gmail.com">Copiar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Cristian Cuenca · Gestoría automotor</span>
+    <a href="mailto:cristiancuenca515@gmail.com">cristiancuenca515@gmail.com</a>
+  </div>
+</footer>
+
+<div class="bar">
+  <a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/5492494571212?text=Hola%20Cristian%2C%20quiero%20hacer%20una%20consulta."><svg aria-hidden="true"><use href="#wa"/></svg>Consultar por WhatsApp</a>
+</div>
+
+<script>
+// Filigrana tipo guilloché, como la de los títulos y documentos oficiales.
+(function(){
+  var c=document.getElementById('guilloche'); if(!c||!c.getContext) return;
+  function draw(){
+    var r=c.getBoundingClientRect(), d=Math.min(window.devicePixelRatio||1,2);
+    c.width=r.width*d; c.height=r.height*d;
+    var g=c.getContext('2d'); g.scale(d,d); g.clearRect(0,0,r.width,r.height);
+    var wide=r.width>=900, cx=wide?r.width*.8:r.width*.92, cy=wide?r.height*.5:r.height*.16, R=wide?r.height*.78:r.width*.62;
+    g.lineWidth=.5; g.strokeStyle='rgba(205,172,102,.13)';
+    for(var k=0;k<7;k++){
+      var a=R*(1-k*.09), b=a*.16, n=18+k*2;
+      g.beginPath();
+      for(var t=0;t<=Math.PI*2+.01;t+=.004){
+        var rad=a+b*Math.sin(n*t+k*.6), x=cx+rad*Math.cos(t), y=cy+rad*Math.sin(t);
+        if(t===0) g.moveTo(x,y); else g.lineTo(x,y);
+      }
+      g.stroke();
+    }
+  }
+  draw(); var to; window.addEventListener('resize',function(){clearTimeout(to);to=setTimeout(draw,150)});
+})();
+
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var done=function(){var t=b.textContent;b.textContent='Copiado';setTimeout(function(){b.textContent=t},1600)};
+    var fallback=function(){var el=b.parentNode.querySelector('strong');var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)};
+    try{navigator.clipboard.writeText(b.dataset.copy).then(done,fallback)}catch(e){fallback()}
+  });
+});
+</script>
+
+</body></html>
